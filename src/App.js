@@ -33,9 +33,16 @@ class App extends Component {
         <Subject 
           title={ this.state.subject.title } 
           sub={ this.state.subject.sub }
+          onChangePage={function(obj) {
+            // console.log(obj);
+            this.setState({ mode: obj.key });
+          }.bind(this)}
           ></Subject>
         <TOC 
           data={ this.state.contents }
+          onChangePage={ function(obj) {
+            console.log(obj);
+          }.bind(this) }
           ></TOC>
         <Content 
           title={ _title } 
